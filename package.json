@@ -1,0 +1,19 @@
+{
+  "name": "padelparadise-codex",
+  "version": "1.0.0",
+  "description": "Padel Paradise - plateforme compl\u00e8te de r\u00e9servation et gestion de club de padel",
+  "main": "server.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node server.js",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "keywords": [
+    "padel",
+    "reservation",
+    "club",
+    "sport"
+  ],
+  "author": "Padel Paradise Automation",
+  "license": "MIT",
+  "type": "module"
+}
