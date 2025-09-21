@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padel Paradise • Interface Club</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <div class="logo-area">
+          <img src="/assets/images/logo.svg" alt="Padel Paradise" />
+          <div>
+            <div class="title">Padel Paradise • Club</div>
+            <div class="tagline">Administration sécurisée</div>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li data-view="dashboard" class="active">Tableau de bord</li>
+          <li data-view="planning">Planning</li>
+          <li data-view="finances">Finances</li>
+          <li data-view="membres">Membres</li>
+          <li data-view="ressources">Ressources</li>
+        </ul>
+        <div class="nav-actions" id="club-nav-actions"></div>
+      </nav>
+
+      <section class="section" data-section="login">
+        <div class="card" style="max-width: 420px; margin: 0 auto;">
+          <h2>Connexion administrateur</h2>
+          <p class="small">Accès réservé au staff du club Padel Paradise.</p>
+          <form id="club-login-form" style="display: grid; gap: 1rem;">
+            <label>
+              Adresse e-mail
+              <input type="email" name="email" required autocomplete="email" />
+            </label>
+            <label>
+              Mot de passe
+              <input type="password" name="password" required autocomplete="current-password" />
+            </label>
+            <button type="submit">Se connecter</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" data-section="dashboard" hidden>
+        <h2>Tableau de bord</h2>
+        <div class="grid two" id="club-dashboard-metrics"></div>
+        <div class="section" style="margin-top: 2rem;">
+          <h3>Top joueurs</h3>
+          <div class="list" id="club-top-players"></div>
+        </div>
+      </section>
+
+      <section class="section" data-section="planning" hidden>
+        <h2>Planning des terrains</h2>
+        <div class="card">
+          <div class="flex between center" style="margin-bottom: 1rem;">
+            <input type="date" id="club-date-picker" />
+            <button id="club-refresh-planning" class="secondary">Actualiser</button>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Heure</th>
+                  <th>Terrain</th>
+                  <th>Client</th>
+                  <th>Participants</th>
+                  <th>Statut</th>
+                </tr>
+              </thead>
+              <tbody id="club-planning-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-section="finances" hidden>
+        <h2>Suivi financier</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Réservation</th>
+                <th>Montant (€)</th>
+                <th>Statut</th>
+                <th>Référence</th>
+              </tr>
+            </thead>
+            <tbody id="club-transactions-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" data-section="membres" hidden>
+        <h2>Membres du club</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Niveau</th>
+                <th>Matchs joués</th>
+                <th>Points</th>
+                <th>Inscription</th>
+              </tr>
+            </thead>
+            <tbody id="club-members-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" data-section="ressources" hidden>
+        <h2>Ressources &amp; formation</h2>
+        <div class="card">
+          <h3>Formation express (5 minutes)</h3>
+          <div style="position: relative; padding-top: 56.25%; margin-top: 1rem; border-radius: var(--border-radius-medium); overflow: hidden; box-shadow: var(--shadow-medium);">
+            <iframe
+              src="https://www.youtube.com/embed/3dx7v5F-b1o"
+              title="Prise en main de l'interface club Padel Paradise"
+              style="position: absolute; inset: 0; width: 100%; height: 100%; border: none;"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="card" style="margin-top: 1.5rem;">
+          <h3>Documentation rapide</h3>
+          <p class="small">
+            Retrouver le guide complet de prise en main, des check-lists quotidiennes et des conseils de gestion dans la
+            <a href="/docs/ADMIN_GUIDE.html" target="_blank">documentation Padel Paradise</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast-container" id="club-toast"></div>
+
+    <script type="module" src="/assets/js/club.js"></script>
+  </body>
+</html>
