@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padel Paradise - Réservez, jouez, progressez</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <div class="logo-area">
+          <img src="/assets/images/logo.svg" alt="Padel Paradise" />
+          <div>
+            <div class="title">Padel Paradise</div>
+            <div class="tagline">Réserver. Jouer. Briller.</div>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li data-view="hero" class="active">Accueil</li>
+          <li data-view="reservation">Réserver</li>
+          <li data-view="matches">Matchs</li>
+          <li data-view="community">Communauté</li>
+          <li data-view="profile">Profil</li>
+          <li data-view="notifications">Alertes</li>
+        </ul>
+        <div class="nav-actions">
+          <button class="secondary" id="btn-open-login">Connexion</button>
+          <button id="btn-open-register">S'inscrire</button>
+        </div>
+      </nav>
+
+      <section class="section" data-section="hero">
+        <div class="hero">
+          <div class="hero-text">
+            <h1>Votre destination ultime pour le padel.</h1>
+            <p>
+              Réservez votre terrain en 4 clics, lancez des matchs privés ou publics,
+              suivez votre progression et connectez-vous à la communauté la plus dynamique.
+            </p>
+            <div class="hero-actions">
+              <button data-view="reservation" class="action-primary">Commencer l'aventure</button>
+              <button class="secondary" data-view="community">Explorer la communauté</button>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="stat" id="hero-bookings">0</div>
+            <small>Réservations confirmées cette semaine</small>
+            <div class="metric">
+              <div class="value" id="hero-occupancy">0%</div>
+              <div class="label">Taux d'occupation moyen</div>
+            </div>
+            <div class="metric">
+              <div class="value" id="hero-members">0</div>
+              <div class="label">Membres actifs</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-section="reservation" hidden>
+        <div class="flex between center" style="margin-bottom: 1.5rem">
+          <h2>Réserver un terrain <span class="badge">4 terrains disponibles</span></h2>
+          <div class="tabs" id="reservation-mode">
+            <button data-mode="book" class="active">Réserver</button>
+            <button data-mode="history">Historique</button>
+          </div>
+        </div>
+        <div class="grid two" id="reservation-panels">
+          <div class="card" id="reservation-form-card"></div>
+          <div class="card" id="reservation-summary-card"></div>
+        </div>
+      </section>
+
+      <section class="section" data-section="matches" hidden>
+        <div class="flex between center" style="margin-bottom: 1.5rem">
+          <h2>Matchs &amp; Tournois</h2>
+          <button id="btn-create-match">Créer un match</button>
+        </div>
+        <div class="grid two" id="matches-container"></div>
+      </section>
+
+      <section class="section" data-section="community" hidden>
+        <div class="flex between center" style="margin-bottom: 1.5rem">
+          <h2>Communauté Active</h2>
+          <input type="search" id="community-search" placeholder="Rechercher des joueurs" />
+        </div>
+        <div class="community-list" id="community-list"></div>
+      </section>
+
+      <section class="section" data-section="profile" hidden>
+        <div class="grid two" id="profile-grid"></div>
+      </section>
+
+      <section class="section" data-section="notifications" hidden>
+        <h2>Notifications personnalisées</h2>
+        <div class="notification-list" id="notification-list"></div>
+      </section>
+    </main>
+
+    <div class="modal" id="auth-modal" hidden>
+      <div class="modal-content" id="auth-modal-content"></div>
+    </div>
+
+    <div class="toast-container" id="toast-container"></div>
+
+    <script type="module" src="/assets/js/app.js"></script>
+  </body>
+</html>
